@@ -1,6 +1,5 @@
 const $buttonsContainer = document.getElementById("buttons-container")
 const $screen = document.querySelector('#screen')
-const $operand = document.querySelector('.operand')
 
 $buttonsContainer.addEventListener("click", event => {
     if(event.target.textContent === "1") {
@@ -25,6 +24,17 @@ $buttonsContainer.addEventListener("click", event => {
         $screen.textContent += "0"
     } else if(event.target.textContent === "C") {
         $screen.textContent = ""
+    } else if(event.target.textContent === "x") {
+        $screen.textContent += "*"
+    } else if(event.target.textContent === "÷") {
+        $screen.textContent += "/"
+    } else if(event.target.textContent === "+") {
+        $screen.textContent += "+"
+    } else if(event.target.textContent === "-") {
+        $screen.textContent += "-"
+    } else if(event.target.textContent === "=") {
+        const $result = eval($screen.textContent)
+        $screen.textContent = $result
     }
 })
 
